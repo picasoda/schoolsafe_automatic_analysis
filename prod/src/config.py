@@ -38,7 +38,7 @@ PATHS = {
     'data_dir': PROJECT_ROOT / 'data',
     'json_dir': PROJECT_ROOT / 'data' / 'json',
     'excel_dir': PROJECT_ROOT / 'data' / 'excel',
-    'backup_dir': PROJECT_ROOT / 'data' / 'backup',  # 추가 가능
+    'backup_dir': PROJECT_ROOT / 'data' / 'backup', 
     
     # 파일
     'school_list_json': PROJECT_ROOT / 'data' / 'json' / 'school_list.json',
