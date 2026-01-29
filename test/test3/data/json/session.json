@@ -1,0 +1,16 @@
+{
+    "cookies": {
+        "JSESSIONID": "4289B9FC5D0A30DCD24D11E18A7C2489.tomcat2",
+        "NetFunnel_ID": "5002%3A200%3Akey%3D116943D82FA192B22412EEC45C8022F5855D860214E3478CF7940DC81885912F8DC51DF544C0B711AD7A87041199706B7CD882D42C376DF550A6EC6E077BEA6DC55CA72D0999C0A2DF402055AAAC81D878134A9B52DB3130B2A2EE25CFED41F73D13ED672469A711F89ACC03C785BABD2C302C30%26nwait%3D0%26nnext%3D0%26tps%3D0.000000%26ttl%3D0%26ip%3Disu.netfunnel.co.kr%26port%3D443",
+        "4-rr": "645131c3138bc7f7a18aafb9544d3ff9"
+    },
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "Accept": "text/html, */*; q=0.01",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-Requested-With": "XMLHttpRequest",
+        "Origin": "https://www.schoolsafe24.or.kr",
+        "Referer": "https://www.schoolsafe24.or.kr/mngr/sepr/seprPrvncArSchlLvRptRsltList.do"
+    },
+    "current_period": "40"
+}

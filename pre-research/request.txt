@@ -1,0 +1,47 @@
+import requests
+
+cookies = {
+    '4-rr': '645131c3138bc7f7a18aafb9544d3ff9',
+    'NetFunnel_ID': '',
+    'JSESSIONID': 'FE1D4D722C572D469415753F81169441.tomcat1',
+}
+
+headers = {
+    'Accept': 'text/html, */*; q=0.01',
+    'Accept-Language': 'ko,en-US;q=0.9,en;q=0.8,ko-KR;q=0.7,zh-CN;q=0.6,zh;q=0.5',
+    'Connection': 'keep-alive',
+    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    'DNT': '1',
+    'Origin': 'https://www.schoolsafe24.or.kr',
+    'Referer': 'https://www.schoolsafe24.or.kr/mngr/sepr/seprPrvncArSchlLvRptRsltList.do',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-origin',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36',
+    'X-Requested-With': 'XMLHttpRequest',
+    'sec-ch-ua': '"Google Chrome";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    # 'Cookie': '4-rr=645131c3138bc7f7a18aafb9544d3ff9; NetFunnel_ID=; JSESSIONID=FE1D4D722C572D469415753F81169441.tomcat1',
+}
+
+data = {
+    'menuSn': '',
+    'upperMenuSn': '',
+    'pageIndex': '1',
+    'listType': '',
+    'schdlMngSn': '40',
+    'ctpyCd': '46',
+    'eduofCd': '',
+    'schlGrdCd': '',
+    'schlOperSttsCd': '',
+    'schlNm': '',
+    'aprvSttsCd': '1',
+}
+
+response = requests.post(
+    'https://www.schoolsafe24.or.kr/mngr/sepr/seprPrvncArSchlLvRptRsltAjaxList.do',
+    cookies=cookies,
+    headers=headers,
+    data=data,
+)

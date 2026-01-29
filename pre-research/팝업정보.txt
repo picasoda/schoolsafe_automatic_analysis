@@ -1,0 +1,293 @@
+<script>
+//팝업창 닫기
+function closeDetail() {
+    $('#popupDetail').removeClass('on');
+}
+
+function goModify(schCd, schdlSn){
+    closeDetail();
+    var params = {
+        schlCd : schCd
+        , schdlMngSn : schdlSn
+        , pageType : "update"
+    }
+    fn_ajax.html('/mngr/sepr/seprRptRsltSchlInfoPop.do', params, function(result){
+        $('#popupDetail').html(result); // 상세 정보를 팝업 내에 로드
+        $('#popupDetail').addClass('on'); // 팝업 표시 
+    });
+}
+
+function fnListExcelDown(){
+    $('#pageType').val('EXCEL');
+    $('#searchFrm').attr('target','com_excel_frame');  
+    $('#searchFrm').attr('action','/mngr/sepr/seprRptRsltSchlInfoPop.do');
+    $('#searchFrm').submit();
+}
+
+</script>
+<div class="onPopup wide on">
+    <div class="onPopupContent onPopupStructure">      
+        <button class="onPopupClose" type="button" onclick="javascript:closeDetail();"><i class="icon-close"></i></button>
+        <div class="onPopupHead">
+            <h3 class="onPopupTitle">보고내용
+             <span class="popupAddTitle">최종수정 : - </span>
+                 </h3>
+        </div>
+        <div class="onPopupBody">
+            <div class="onP">
+                <div class="onConHead">
+                    <div class="onConHead_left">       
+                        <h3 class="onT3">기본정보</h3> 
+                    </div>
+                </div>
+                <div class="onScrollBox">
+                    <table class="onTable noHover">    
+                        <form name="searchFrm" id="searchFrm" method="post">
+                            <input type="hidden" name="schdlMngSn" id="schdlMngSn" value="40">
+                            <input type="hidden" name="schlCd" id="schlCd" value="Q100000165">
+                            <input type="hidden" name="pageType" id="pageType"/>
+                        </form>
+                        <caption>국내학교 (미제출) 기본사항 표. 학교명, 담당자(작성자), 관할, 연락처, 학교급, 교직원수, 학교정보 정보가 제공됨.</caption>
+                        <colgroup>
+                            <col style="width:130px">  
+                            <col style="width:auto">   
+                            <col style="width:130px">  
+                            <col style="width:auto">   
+                            <col style="width:130px">  
+                            <col style="width:auto">   
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">학교명</th>
+                                <td class="al">고흥고등학교 (공립, 전라남도 고흥군)</td>
+                                <th scope="row">소속교 육청</th>
+                                <td class="al">교육청</td>
+                                <th scope="row">학교급</th>
+                                <td class="al" colspan="3">고등학교</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">인원정 보</th>
+                                <td class="al">        
+                                    <div class="onField mr30">
+                                        <span>교직원수</span>
+                                        <strong>60</strong>
+                                    </div>
+                                    <div class="onField">
+                                        <span>학급수</span>
+                                        <strong>18</strong>
+                                    </div>
+                                    <div class="onField">
+                                        <span>학생수</span>
+                                        <strong>373</strong>
+                                    </div>
+                                </td>
+                                <th scope="row">담당자(작성자)</th>
+                                <td class="al">문슬민</td>
+                                <th scope="row">연락처</th>
+                                <td class="al">010-2040-1131</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">보고일 시</th>
+                                <td class="al" colspan="5">2025-12-08</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="onConHead">
+                    <div class="onConHead_left">       
+                        <h3 class="onT3">학생 안전교육 실적보고</h3>
+                    </div>
+                </div>
+                <table class="onTable noHover">        
+                    <caption>안전교육 실적보고 작성 표. 생활안전교육, 교통안전교육, 폭력예방 및
+                        신변보호교육, 약물 및 사이버중 독 예방교육, 재난안전교육, 직업안전교육, 응급처치교육의 시간(차시)과 횟수를
+                        입력,저장하는 표 정보.
+                    </caption>
+                    <colgroup>
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                               <col style="width:auto">
+                           </colgroup>
+                           <thead>
+                               <tr>
+                                   <th scope="col" rowspan="2"></th>
+                                   <th scope="col" class="ac" rowspan="2">생활안전교육</th>
+                                   <th scope="col" class="ac" rowspan="2">교통안전교육</th>
+                                   <th scope="col" class="ac" rowspan="2">폭력예방 및<br/> 신변보호 교육</th> 
+                                   <th scope="col" class="ac" colspan="2">약물 및 사이버<br/>중독 예방교육</th>
+                                   <th scope="col" class="ac" rowspan="2">재난안전교육</th>
+                                   <th scope="col" class="ac" rowspan="2">직업안전교육</th>
+                                   <th scope="col" class="ac" rowspan="2">응급처치교육</th>
+                                   <th scope="col" class="ac" rowspan="2">계</th>
+                               </tr>
+                               <tr>
+                                   <th scope="col" class="ac">약물 중독 예방</th>
+                                   <th scope="col" class="ac">사이버 중독 예방</th>
+                               </tr>
+                           </thead>
+                       <tr>
+                       <td class="al">시간</td>        
+                       <td class="al">10.0</td>        
+                       <td class="al">10.0</td>        
+                       <td class="al">10.0</td>        
+                       <td class="al">10.0</td>        
+                               <td class="al">10.0</td>
+                           <td class="al">6.0</td>     
+                       <td class="al">3.0</td>
+                       <td class="al">2.0</td>
+                       <td class="al">61.0</td>        
+                   </tr>
+                   <tr>
+                       <td class="al">횟수</td>        
+                       <td class="al">10.0</td>        
+                       <td class="al">10.0</td>        
+                       <td class="al">10.0</td>        
+                       <td class="al" colspan="2">     
+                                   10.0</td>
+                           <td class="al">6.0</td>     
+                       <td class="al">3.0</td>
+                       <td class="al">2.0</td>
+                       <td class="al">51.0</td>        
+                   </tr>
+                </table>
+                <div class="onConHead">
+                    <div class="onConHead_left">       
+                        <h3 class="onT3">교직원 등 안전교육 실적보고</h3>
+                    </div>
+                </div>
+                <table class="onTable noHover">        
+                    <colgroup>
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" colspan="9" class="ac">교육이수자현황</th>
+                            <th scope="row" colspan="4" class="ac">교육실시현황</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="3" class="ac">교원</th>
+                            <th scope="row" colspan="3" class="ac">직원</th>
+                            <th scope="row" colspan="3" class="ac">계약직교직원</th>
+                            <th scope="row" colspan="4" class="ac">교육활동참여자</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="ac">총원</th>
+                            <th scope="row" class="ac">이수자수</th>
+                            <th scope="row" class="ac">미이수자수</th>
+                            <th scope="row" class="ac">총원</th>
+                            <th scope="row" class="ac">이수자수</th>
+                            <th scope="row" class="ac">미이수자수</th>
+                            <th scope="row" class="ac">총원</th>
+                            <th scope="row" class="ac">이수자수</th>
+                            <th scope="row" class="ac">미이수자수</th>
+                            <th scope="row" class="ac">총원</th>
+                            <th scope="row" class="ac">실시자수</th>
+                            <th scope="row" class="ac">평균실시시간</th>
+                            <th scope="row" class="ac">미실시자수</th>
+                        </tr>
+                        <tr>
+                            <td class="al">45</td>     
+                            <td class="al">45</td>     
+                            <td class="al">0</td>      
+                            <td class="al">12</td>     
+                            <td class="al">12</td>     
+                            <td class="al">0</td>      
+                            <td class="al">3</td>      
+                            <td class="al">3</td>      
+                            <td class="al">0</td>      
+                            <td class="al">1</td>      
+                            <td class="al">1</td>      
+                            <td class="al">0.0</td>    
+                            <td class="al">0</td>      
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="onConHead">
+                    <div class="onConHead_left">       
+                        <h3 class="onT3">재난대비훈련  실적보고</h3>
+                    </div>
+                </div>
+                <table class="onTable noHover">        
+                    <colgroup>
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                        <col style="width:auto">       
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" colspan="2" class="ac">화재</th>
+                            <th scope="row" rowspan="2" class="ac">지진</th>
+                            <th scope="row" rowspan="2" class="ac">방사능 재난</th>
+                            <th scope="row" rowspan="2" class="ac">화학물질 유출사고</th>
+                            <th scope="row" colspan="7" class="ac">기타재난</th>
+                            <th scope="row" rowspan="2" class="ac">계</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="ac">자체</th>
+                            <th scope="row" class="ac">합동</th>
+                            <th scope="row" class="ac">폭염</th>
+                            <th scope="row" class="ac">풍수해</th>
+                            <th scope="row" class="ac">대설/한파</th>
+                            <th scope="row" class="ac">테러</th>
+                            <th scope="row" class="ac">민방공</th>
+                            <th scope="row" class="ac">해양사고</th>
+                            <th scope="row" class="ac">기타유형(횟수)</th>
+                        </tr>
+                        <tr>
+                            <td class="al">2</td>      
+                            <td class="al">2</td>      
+                            <td class="al">1</td>      
+                            <td class="al">0</td>      
+                            <td class="al">0</td>      
+                            <td class="al">1</td>      
+                            <td class="al">1</td>      
+                            <td class="al">0</td>      
+                            <td class="al">0</td>      
+                            <td class="al">2</td>      
+                            <td class="al">0</td>      
+                            <td class="al">기타(0)</td>
+                            <td class="al">9</td>      
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="onPopupFooter">
+            <div class="btnGroup ac">
+                <a href="javascript:void(0)" class="btnM_green" onclick="javascript:fnListExcelDown();"><span>엑셀 다운로드</span></a>
+                <a href="javascript:void(0)" class="btnM_blue" onclick='javascript:goModify("Q100000165", "40")'>수정하기</a>
+                <a href="javascript:void(0)" class="btnM_gray" onclick='javascript:closeDetail(); '>닫기</a>  
+            </div>
+        </div>
+    </div>
+</div>
