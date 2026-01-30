@@ -163,9 +163,4 @@ KEYWORDS['status_icons']        # 상태 아이콘 (✅/❌/⚠️)
 - 🔗 **웹사이트 구조 변경**: `config.py`의 `HTML_SELECTORS` 업데이트
 - 📊 **기준값 변경**: `config.py`의 `DEFAULT_CONFIG` 수정
 
-### 기타
-- ⚠️ 엑셀 파일이 이미 있으면 덮어씁니다
-- 📂 `data/` 폴더는 자동 생성되므로 삭제하지 않아도 됩니다
-- 🔄 재실행 시 이전 결과는 `data/backup/`에 백업됩니다
-
 ---
